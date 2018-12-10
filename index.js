@@ -3,6 +3,8 @@ new function() {
 	var connected = false;
 
 	var serverUrl;
+	var serverType;
+	var env;
 	var connectionStatus;
 	var sendMessage;
 	
@@ -22,6 +24,8 @@ new function() {
 		serverUrl.attr('disabled', 'disabled');
 		connectButton.hide();
 		disconnectButton.show();
+		key = serverType.val() + env.val();
+		localStorage.setItem(key, url);
 	}
 	
 	var close = function() {
@@ -40,6 +44,14 @@ new function() {
 	}
 	
 	var clearLog = function() {
+		$('#messages').html('');
+	}
+	
+	var addServer = function() {
+		$('#messages').html('');
+	}
+
+	var addEnv = function() {
 		$('#messages').html('');
 	}
 	
@@ -107,6 +119,14 @@ new function() {
 			
 			$('#clearMessage').click(function(e) {
 				clearLog();
+			});
+			
+			$('#addServer').click(function(e) {
+				addServer();
+			});
+			
+			$('#addEnv').click(function(e) {
+				addEnv();
 			});
 			
 			var isCtrl;

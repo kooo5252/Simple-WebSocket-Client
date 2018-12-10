@@ -11,6 +11,41 @@
 	<fieldset>
 		<legend>Server Location</legend>
 		<div>
+			<label>Server:</label>
+			<select id="Server" name="Server">
+			</select>
+			<button id="addServer">Add</button>
+		</div>
+		<div>
+			<label>Env:</label>
+			<select id="Env" name="Env">
+			</select>
+			<button id="addEnv">Add</button>
+		</div>
+		<div>
+			<label>URL:</label>
+			<input type="text" id="serverUrl" value="ws://"/>
+			<button id="connectButton">Open</button>
+			<button id="disconnectButton">Close</button>
+		</div>
+		<div>
+			<label>Status:</label>
+			<span id="connectionStatus">CLOSED</span>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Config</legend>
+		<div>
+			<label>Server:</label>
+			<input type="text" id="serverUrl" value="ws://"/>
+			<button id="addServerButton">Add</button>
+		</div>
+		<div>
+			<label>Env:</label>
+			<input type="text" id="serverUrl" value="ws://"/>
+			<button id="addEnv">Add</button>
+		</div>
+		<div>
 			<label>URL:</label>
 			<input type="text" id="serverUrl" value="ws://"/>
 			<button id="connectButton">Open</button>
