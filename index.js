@@ -48,7 +48,19 @@ new function() {
 	}
 	
 	var addServer = function() {
-		$('#messages').html('');
+		var newServer = $('#newServer');
+		var servers = [];
+		var serverElement = $('#Server').children();
+		for(var i = 0;i<serverElement.length;i++){
+			servers.push(serverElement.eq(i).text());
+		}
+		servers.push(newServer);
+		servers = JSON.stringify(servers);
+		localStorage.setItem("server", servers);
+		var addOption = document.createElement("option")
+		addOption.text = newServer;
+		addOption.value = newServer;
+		
 	}
 
 	var addEnv = function() {
